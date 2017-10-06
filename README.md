@@ -14,9 +14,7 @@ Summary: Tool to check how rotten conda-forge feedstocks are
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/feedstockrot-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/feedstockrot-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/feedstockrot-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/feedstockrot-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/feedstockrot-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/feedstockrot-feedstock/branch/master)
+All platforms: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
 
 Current release info
 ====================
@@ -66,6 +64,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
