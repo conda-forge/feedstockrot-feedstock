@@ -1,6 +1,7 @@
 {% set name = "feedstockrot" %}
-{% set version = "1.0.0" %}
-{% set build = 1 %}
+{% set version = "1.1.0" %}
+{% set build = 0 %}
+{% set sha256 = "009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b" %}
 
 package:
   name: {{ name }}
@@ -9,10 +10,11 @@ package:
 source:
   fn: feedstockrot-{{ version }}.tar.gz
   url: https://github.com/axiom-data-science/feedstockrot/archive/{{ version }}.tar.gz
-  sha256: 32181231186dce986cfd9684001cb63d1411e9a8ca531e129b3600f875cce6ea
+  sha256: {{ sha256 }}
 
 build:
   skip: true  # [py<35]
+  noarch: python
   number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
