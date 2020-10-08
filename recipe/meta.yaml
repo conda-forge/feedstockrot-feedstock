@@ -1,6 +1,6 @@
 {% set name = "feedstockrot" %}
 {% set version = "1.1.0" %}
-{% set build = 1000 %}
+{% set build = 1001 %}
 
 package:
   name: {{ name }}
@@ -42,6 +42,7 @@ test:
 about:
   home: https://github.com/axiom-data-science/feedstockrot
   license: MIT
+  license_file: LICENSE
   summary: Tool to check how rotten conda-forge feedstocks are
 
 extra:
