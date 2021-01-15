@@ -19,7 +19,7 @@ build:
     - feedstockrot = feedstockrot.command_line:main_run
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
 
