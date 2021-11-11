@@ -1,6 +1,6 @@
 {% set name = "feedstockrot" %}
 {% set version = "1.1.0" %}
-{% set build = 1002 %}
+{% set build = 1003 %}
 
 package:
   name: {{ name }}
