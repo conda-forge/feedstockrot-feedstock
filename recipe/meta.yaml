@@ -1,30 +1,27 @@
 {% set name = "feedstockrot" %}
 {% set version = "1.1.0" %}
-{% set build = 1002 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: feedstockrot-{{ version }}.tar.gz
   url: https://github.com/axiom-data-science/feedstockrot/archive/{{ version }}.tar.gz
   sha256: 009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b
 
 build:
-  skip: true  # [py<35]
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1003
+  noarch: python
   entry_points:
-    - feedstockrot = feedstockrot.command_line:main_run
+    - feedstockrot=feedstockrot.command_line:main_run
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
-    - setuptools
-
+    - python >=3.6
+    - pip
   run:
-    - python
+    - python >=3.6
     - setuptools
     - requests
     - packaging
@@ -35,9 +32,12 @@ requirements:
 test:
   imports:
     - feedstockrot
-    - feedstockrot.tests
+    - feedstockrot.package_sources
   commands:
+    - pip check
     - feedstockrot --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/axiom-data-science/feedstockrot
