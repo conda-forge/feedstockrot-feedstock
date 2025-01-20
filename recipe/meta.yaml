@@ -10,18 +10,19 @@ source:
   sha256: 009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b
 
 build:
-  number: 1003
+  number: 1004
   noarch: python
   entry_points:
     - feedstockrot=feedstockrot.command_line:main_run
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools
     - requests
     - packaging
@@ -38,6 +39,7 @@ test:
     - feedstockrot --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/axiom-data-science/feedstockrot
